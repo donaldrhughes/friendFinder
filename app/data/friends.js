@@ -41,7 +41,7 @@ for (var i = 0; i < 3; i++) {
     randomRes = makeScores();
 
     var randomFriend = new Friend(randomName, "#", randomRes);
-    randomFriend[i] = randomFriend
+    randomFriend[i] = randomFriend;
     friendsArr.push(randomFriend[i]);
 }
 
@@ -59,16 +59,6 @@ var dataObj = {
 
 console.log(dataObj.friend);
 console.log(dataObj.friend.name);
-
-
-
-//
-// var jsonString = JSON.stringify(dataOBj);
-//constructor to create the JSON obj
-
-
-// console.log(friendsArr);
-// console.log(jsonString);
 
 //export the array
 module.exports = dataObj;
@@ -88,6 +78,7 @@ function Friend(name, photo, randomRes) {
 EXTRA---This generates a Random user object that has a Capital First and Last Name and a Defined 
 number of addtl lower case letters ---very cool!!!!1*/
 function makeid() {
+
     var text = "";
     var text2 = "";
     var text3 = "";
