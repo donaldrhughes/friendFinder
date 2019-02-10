@@ -14,10 +14,9 @@ The closest match will be the user with the least amount of difference.*/
 
 //=========================================
 // DATA (Main)
-//Product constructor
 
 
-// actual example Friends with names etc
+// Example Friends with names etc
 var james = new Friend("James Donovan Halliday", "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjyvZvw_q3gAhVR71QKHb1SDlsQjRx6BAgBEAU&url=https%3A%2F%2Freadyplayerone.fandom.com%2Fwiki%2FJames_Donovan_Halliday&psig=AOvVaw3xb8Sy3jNeyZK6qFZUceks&ust=1549778946193368", [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]);
 
 var indigo = new Friend("Indigo Montoya", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.ragan.com%2Fwp-content%2Fuploads%2F2017%2F09%2FInigo_Montoya_at_Work.jpg&imgrefurl=https%3A%2F%2Fwww.ragan.com%2F8-reasons-you-should-be-more-like-inigo-montoya-at-work%2F&docid=rEV1QPl3CpMr4M&tbnid=VDqbWeM1VFl5DM%3A&vet=10ahUKEwj0nerAqbDgAhU9JDQIHdWHBVYQMwhqKAAwAA..i&w=600&h=400&bih=713&biw=990&q=inigo%20montoya&ved=0ahUKEwj0nerAqbDgAhU9JDQIHdWHBVYQMwhqKAAwAA&iact=mrc&uact=8", [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]);
@@ -31,7 +30,7 @@ var amy = new Friend("Amy Schumer", "https://www.google.com/imgres?imgurl=https%
 var kate = new Friend("Kate Winslet", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fd3%2F58%2F83%2Fd35883dc43d7f48e1b7825245844fcde.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F236227942929717166%2F&docid=M9PuQgKg1EYKdM&tbnid=tWNvpmashKk5wM%3A&vet=10ahUKEwjNoOjSqrDgAhU6JzQIHRiJCi8QMwhNKAEwAQ..i&w=500&h=588&bih=713&biw=990&q=kate%20winslet%20headshot&ved=0ahUKEwjNoOjSqrDgAhU6JzQIHRiJCi8QMwhNKAEwAQ&iact=mrc&uact=8", [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]);
 
 
-// Friend Generator --- Extra 
+//EXTRA --  Friend Generator --- Generate a Friend --- Cool!
 var randomRes = "";
 var friendsArr = [];
 var randomName = "";
@@ -50,13 +49,34 @@ for (var i = 0; i < 3; i++) {
 var newFriend = new Friend("New Friend", "#", [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]);
 
 friendsArr.push(kate, james, charlize, indigo, hugh, amy);
+//Best Form
 
-console.log(friendsArr);
+var dataObj = {
 
+    friend: new Friend(randomName, "#", randomRes)
+}
+
+
+console.log(dataObj.friend);
+console.log(dataObj.friend.name);
+
+
+
+//
+// var jsonString = JSON.stringify(dataOBj);
+//constructor to create the JSON obj
+
+
+// console.log(friendsArr);
+// console.log(jsonString);
 
 //export the array
-module.exports = friendsArr;
+module.exports = dataObj;
 
+
+
+//Functions
+//=========================================
 function Friend(name, photo, randomRes) {
     this.name = name;
     this.photo = photo;
@@ -64,6 +84,9 @@ function Friend(name, photo, randomRes) {
 
 }
 
+/*
+EXTRA---This generates a Random user object that has a Capital First and Last Name and a Defined 
+number of addtl lower case letters ---very cool!!!!1*/
 function makeid() {
     var text = "";
     var text2 = "";
@@ -87,12 +110,15 @@ function makeid() {
     finalText = text + text2 + " " + text3 + text4;
     return finalText;
 }
-//an extra function which returns the results of a Generated 10 question Array
+
+//EXTRA function which returns the results of a Generated 10 question Array
 function makeScores() {
     var result = Array.from({ length: 10 }, () => Math.floor(Math.random() * 10) + 1);;
 
     return result;
 }
+
+//Build a Giphy Response that pulls a random image
 
 
 
