@@ -31,34 +31,49 @@ var kate = new Friend("Kate Winslet", "https://www.google.com/imgres?imgurl=http
 
 
 //EXTRA --  Friend Generator --- Generate a Friend --- Cool!
-var randomRes = "";
+
+//The main array of friends
 var friendsArr = [];
-var randomName = "";
-var randomFriend;
-var randomfriendArr = [];
+
 //how many friends do you want? =)
-var friendsNum = 1;
-
-
-for (var i = 0; i < friendsNum; i++) {
+var friendsNum = 2;
+var friendsJson = "";
+var randomObj = {
+    generate: function(){
+        for (var i = 0; i < friendsNum; i++) {
     randomName = makeid();
     randomRes = makeScores();
 
     randomFriend = new Friend(randomName, "#", randomRes);
     randomFriend[i] = randomFriend;
     friendsArr.push(randomFriend[i]);
+    }
+
+    
+    friendsArr.push(kate, james, charlize, indigo, hugh, amy);
+    console.log(friendsArr);
+    //circular structure error
+    // friendsJson = JSON.stringify(friendsArr);
+    // console.log(friendsJson);
+    return friendsArr;
+
+    }
+
 }
+
+randomObj.generate();
+console.log(randomObj);
+
+
 var dataObj = {
     friend0: new Friend(randomName, "#", randomRes),
-    // friend1: new Friend(randomName, "#", randomRes),
+    // friend1: 
     // friend2: new Friend(randomName, "#", randomRes),
-    // friend3: new Friend(randomName, "#", randomRes),
-    // friend4: new Friend(randomName, "#", randomRes)
 }
 
 var newFriend = new Friend("New Friend", "#", [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]);
 
-friendsArr.push(kate, james, charlize, indigo, hugh, amy);
+
 //Best Form
 
 
