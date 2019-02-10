@@ -12,9 +12,9 @@ module.exports = function (app) {
   // survey route
 
   app.get("/api/friends", function (req, res) {
-    console.log(res);
+    
     res.json(dataObj);
-
+    console.log(dataObj);
 
   });
 

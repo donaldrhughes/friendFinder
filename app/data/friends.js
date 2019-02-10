@@ -34,31 +34,38 @@ var kate = new Friend("Kate Winslet", "https://www.google.com/imgres?imgurl=http
 var randomRes = "";
 var friendsArr = [];
 var randomName = "";
+var randomFriend;
 var randomfriendArr = [];
+//how many friends do you want? =)
+var friendsNum = 1;
 
-for (var i = 0; i < 3; i++) {
+
+for (var i = 0; i < friendsNum; i++) {
     randomName = makeid();
     randomRes = makeScores();
 
-    var randomFriend = new Friend(randomName, "#", randomRes);
+    randomFriend = new Friend(randomName, "#", randomRes);
     randomFriend[i] = randomFriend;
     friendsArr.push(randomFriend[i]);
 }
-
+var dataObj = {
+    friend0: new Friend(randomName, "#", randomRes),
+    // friend1: new Friend(randomName, "#", randomRes),
+    // friend2: new Friend(randomName, "#", randomRes),
+    // friend3: new Friend(randomName, "#", randomRes),
+    // friend4: new Friend(randomName, "#", randomRes)
+}
 
 var newFriend = new Friend("New Friend", "#", [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]);
 
 friendsArr.push(kate, james, charlize, indigo, hugh, amy);
 //Best Form
 
-var dataObj = {
-
-    friend: new Friend(randomName, "#", randomRes)
-}
 
 
-console.log(dataObj.friend);
-console.log(dataObj.friend.name);
+
+// console.log(dataObj.friend);
+
 
 //export the array
 module.exports = dataObj;
