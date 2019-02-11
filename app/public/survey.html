@@ -13,7 +13,8 @@
 </head>
 
 <body>
-        <style> body{
+    <style>
+        body{
                 background-color:skyblue;
             }
             .ques{
@@ -87,7 +88,7 @@
 
                 <i class="medium material-icons prefix icon1">favorite_border</i>
                 <label class="flow-text ques">I Am Here For Friends Only (Question: 1)</label>
-                <select id ="ques1" class="browser-default pref">
+                <select id="ques1" class="browser-default pref">
                     <option value="" disabled selected>Select Preference</option>
                     <option value="1">[1] - Highly Disagree</option>
                     <option value="2">[2] - Disagree</option>
@@ -98,7 +99,7 @@
 
                 <i class="medium material-icons prefix icon2">language</i>
                 <label class="flow-text ques">Higher Education is Important (Question: 2)</label>
-                <select id ="ques2" class="browser-default flow-text pref">
+                <select id="ques2" class="browser-default flow-text pref">
                     <option value="" disabled selected> Select Preference</option>
                     <option value="1">[1] - Highly Disagree</option>
                     <option value="2">[2] - Disagree</option>
@@ -108,7 +109,7 @@
                 </select>
                 <i class="medium material-icons prefix icon3">cloud_queue</i>
                 <label class="flow-text ques">Religion Plays An Important Role in My Life (Question: 3)</label>
-                <select id ="ques3" class="browser-default flow-text pref">
+                <select id="ques3" class="browser-default flow-text pref">
                     <option value="" disabled selected>Select Preference</option>
                     <option value="1">[1] - Highly Disagree</option>
                     <option value="2">[2] - Disagree</option>
@@ -118,7 +119,7 @@
                 </select>
                 <i class="medium material-icons prefix icon4">smartphone</i>
                 <label class="flow-text ques">I am Interested in Politics or Current Events (Question: 4)</label>
-                <select id ="ques4" class="browser-default flow-text pref">
+                <select id="ques4" class="browser-default flow-text pref">
                     <option value="" disabled selected>Select Preference</option>
                     <option value="1">[1] - Highly Disagree</option>
                     <option value="2">[2] - Disagree</option>
@@ -128,7 +129,7 @@
                 </select>
                 <i class="medium material-icons prefix icon5">looks</i>
                 <label class="flow-text ques">I Enjoy Outdoor Activities (Question: 5)</label>
-                <select id ="ques5" class="browser-default flow-text pref">
+                <select id="ques5" class="browser-default flow-text pref">
                     <option value="" disabled selected>Select Preference</option>
                     <option value="1">[1] - Highly Disagree</option>
                     <option value="2">[2] - Disagree</option>
@@ -138,7 +139,7 @@
                 </select>
                 <i class="medium material-icons prefix icon6">flight</i>
                 <label class="flow-text ques">I Have Travelled a Lot throughout my Life (Question: 6)</label>
-                <select id ="ques6" class="browser-default flow-text pref">
+                <select id="ques6" class="browser-default flow-text pref">
                     <option value="" disabled selected>Select Preference</option>
                     <option value="1">[1] - Highly Disagree</option>
                     <option value="2">[2] - Disagree</option>
@@ -149,7 +150,7 @@
                 <i class="medium material-icons prefix icon7">palette</i>
 
                 <label class="flow-text ques">I Appreciate the Finer Things (Question: 7)</label>
-                <select id ="ques7" class="browser-default flow-text pref">
+                <select id="ques7" class="browser-default flow-text pref">
                     <option value="" disabled selected>Select Preference</option>
                     <option value="1">[1] - Highly Disagree</option>
                     <option value="2">[2] - Disagree</option>
@@ -159,7 +160,7 @@
                 </select>
                 <i class="medium material-icons prefix icon8">ac_unit</i>
                 <label class="flow-text ques">There is Intelligent Life on Other Planets. (Question: 8)</label>
-                <select id ="ques8" class="browser-default flow-text pref">
+                <select id="ques8" class="browser-default flow-text pref">
                     <option value="" disabled selected>Select Preference</option>
                     <option value="1">[1] - Highly Disagree</option>
                     <option value="2">[2] - Disagree</option>
@@ -169,7 +170,7 @@
                 </select>
                 <i class="medium material-icons prefix icon9">computer</i>
                 <label class="flow-text ques">My Favorite Type of Movie Is (Question: 9)</label>
-                <select id ="ques9" class="browser-default flow-text pref">
+                <select id="ques9" class="browser-default flow-text pref">
                     <option value="" disabled selected>Select Preference</option>
                     <option value="1">[1] - Horror</option>
                     <option value="2">[2] - Action / Adventure / Sci Fi</option>
@@ -179,7 +180,7 @@
                 </select>
                 <i class="medium material-icons prefix icon10">smoke_free</i>
                 <label class="flow-text ques">I Dine Out often (Question: 10)</label>
-                <select id ="ques10" class="browser-default flow-text pref">
+                <select id="ques10" class="browser-default flow-text pref">
                     <option value="" disabled selected>Select Preference</option>
                     <option value="1">[1] - Highly Disagree</option>
                     <option value="2">[2] - Disagree</option>
@@ -262,58 +263,44 @@
         // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
         // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
         // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-       
+
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
-           
+
             // Here we grab the form elements
             var survey = {
-                ques1: $("#ques1").val().trim(),
-                ques2: $("#ques2").val().trim(),
-                ques3: $("#ques3").val().trim(),
-                ques4: $("#ques4").val().trim(),
-                ques5: $("#ques5").val().trim(),
-                ques6: $("#ques6").val().trim(),
-                ques7: $("#ques7").val().trim(),
-                ques8: $("#ques8").val().trim(),
-                ques9: $("#ques9").val().trim(),
-                ques10: $("#ques10").val().trim()
+                ques1: $("#ques1").val(),
+                ques2: $("#ques2").val(),
+                ques3: $("#ques3").val(),
+                ques4: $("#ques4").val(),
+                ques5: $("#ques5").val(),
+                ques6: $("#ques6").val(),
+                ques7: $("#ques7").val(),
+                ques8: $("#ques8").val(),
+                ques9: $("#ques9").val(),
+                ques10: $("#ques10").val()
             };
 
             console.log(survey);
 
             // This line is the magic. It"s very similar to the standard ajax function we used.
             // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-            // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-            // depending on if a tables is available or not.
+            // The callback is the response of the server. 
 
             $.post("/api/friends", survey,
                 function (data) {
 
-                    if (data) {
-                        alert("Yay!");
+                    if (!data) {
+                        throw err;
                     }
 
-                    else {
-                        alert("Sorry");
-                    }
-
-                    // Clear the form when submitting
-                    for (var i = 0; i <= 9; i++) {
-                        $("#ques" + i).val("");
-                    }
-                    //   $("#ques0").val("");
-                    //   $("#ques1").val("");
-                    //   $("#ques2").val("");
-                    //   $("#ques3").val("");
-                    //   $("#ques4").val("");
-                    //   $("#ques5").val("");
-                    //   $("#ques6").val("");
-                    //   $("#ques7").val("");
-                    //   $("#ques8").val("");
-                    //   $("#ques9").val("");
+                    console.log(data);
 
                 });
+            // Clear the form when submitting
+            for (var i = 0; i <= 9; i++) {
+                $("#ques" + i).val("");
+            }
 
         });
 
