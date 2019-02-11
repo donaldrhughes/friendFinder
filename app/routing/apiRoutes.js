@@ -2,6 +2,7 @@
 //=================================
 var path = require("path");
 var dataObj = require("../data/friends")
+var Friend = require("../data/Friend");
 
 //Routes
 //=========================================
@@ -19,8 +20,10 @@ module.exports = function (app) {
   });
 
   app.post("/api/friends", function (req, res) {
-
-    friendsArr.push(req.body);
+// console.log(res);
+    join = new Friend("New Friend", "#", req.body);
+    console.log(join);
+    // friendsArr.push(req.body);
     // res.json(true);
     // }
     // else {

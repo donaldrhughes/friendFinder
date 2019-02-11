@@ -39,23 +39,23 @@ var friendsArr = [];
 var friendsNum = 2;
 var friendsJson = "";
 var randomObj = {
-    generate: function(){
+    generate: function () {
         for (var i = 0; i < friendsNum; i++) {
-    randomName = makeid();
-    randomRes = makeScores();
+            randomName = makeid();
+            randomRes = makeScores();
 
-    randomFriend = new Friend(randomName, "#", randomRes);
-    randomFriend[i] = randomFriend;
-    friendsArr.push(randomFriend[i]);
-    }
+            randomFriend = new Friend(randomName, "#", randomRes);
+            randomFriend[i] = randomFriend;
+            friendsArr.push(randomFriend[i]);
+        }
 
-    
-    friendsArr.push(kate, james, charlize, indigo, hugh, amy);
-    console.log(friendsArr);
-    //circular structure error
-    // friendsJson = JSON.stringify(friendsArr);
-    // console.log(friendsJson);
-    return friendsArr;
+
+        friendsArr.push(kate, james, charlize, indigo, hugh, amy);
+        console.log(friendsArr);
+        //circular structure error
+        // friendsJson = JSON.stringify(friendsArr);
+        // console.log(friendsJson);
+        return friendsArr;
 
     }
 
