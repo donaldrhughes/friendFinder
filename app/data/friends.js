@@ -11,7 +11,7 @@ The closest match will be the user with the least amount of difference.*/
 
 //Dependencies
 //=================================
-
+var Friend = require("./Friend");
 //=========================================
 // DATA (Main)
 
@@ -21,9 +21,9 @@ var james = new Friend("James Donovan Halliday", "https://www.google.com/url?sa=
 
 var indigo = new Friend("Indigo Montoya", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.ragan.com%2Fwp-content%2Fuploads%2F2017%2F09%2FInigo_Montoya_at_Work.jpg&imgrefurl=https%3A%2F%2Fwww.ragan.com%2F8-reasons-you-should-be-more-like-inigo-montoya-at-work%2F&docid=rEV1QPl3CpMr4M&tbnid=VDqbWeM1VFl5DM%3A&vet=10ahUKEwj0nerAqbDgAhU9JDQIHdWHBVYQMwhqKAAwAA..i&w=600&h=400&bih=713&biw=990&q=inigo%20montoya&ved=0ahUKEwj0nerAqbDgAhU9JDQIHdWHBVYQMwhqKAAwAA&iact=mrc&uact=8", [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]);
 
-var hugh = new Friend("Hugh Grant", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.biography.com%2F.image%2Ft_share%2FMTE5NTU2MzE2MjM2NjQ1ODk5%2Fhugh-grant-9318171-1-402.jpg&imgrefurl=https%3A%2F%2Fwww.biography.com%2Fpeople%2Fhugh-grant-9318171&docid=10yUpee38Q9UUM&tbnid=2ClTiOkudJsXFM%3A&vet=10ahUKEwjQmquPqrDgAhU8GTQIHYGhDhsQMwhsKAEwAQ..i&w=1200&h=1200&bih=713&biw=990&q=hugh%20grant&ved=0ahUKEwjQmquPqrDgAhU8GTQIHYGhDhsQMwhsKAEwAQ&iact=mrc&uact=8", [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]);
+var hugh = new Friend("Hugh Grant", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.biography.com%2F.image%2Ft_share%2FMTE5NTU2MzE2MjM2NjQ1ODk5%2Fhugh-grant-9318171-1-402.jpg&imgrefurl=https%3A%2F%2Fwww.biography.com%2Fpeople%2Fhugh-grant-9318171&docid=10yUpee38Q9UUM&tbnid=2ClTiOkudJsXFM%3A&vet=10ahUKEwjQmquPqrDgAhU8GTQIHYGhDhsQMwhsKAEwAQ..i&w=1200&h=1200&bih=713&biw=990&q=hugh%20grant&ved=0ahUKEwjQmquPqrDgAhU8GTQIHYGhDhsQMwhsKAEwAQ&iact=mrc&uact=8", [3, 10, 6, 5, 3, 4, 1, 10, 6, 9]);
 
-var charlize = new Friend("Charlize Theron", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.biography.com%2F.image%2Far_1%3A1%252Cc_fill%252Ccs_srgb%252Cg_face%252Cq_auto%3Agood%252Cw_300%2FMTE5NDg0MDU1MjI3NTAwMDQ3%2Fcharlize-theron-9542564-2-402.jpg&imgrefurl=https%3A%2F%2Fwww.biography.com%2Fpeople%2Fcharlize-theron-9542564&docid=YezzpiEu_bRP0M&tbnid=hXwaWwls1i9BZM%3A&vet=10ahUKEwilr-vqqbDgAhVCHTQIHQLyB2wQMwhtKAIwAg..i&w=300&h=300&bih=713&biw=990&q=charlize%20theron&ved=0ahUKEwilr-vqqbDgAhVCHTQIHQLyB2wQMwhtKAIwAg&iact=mrc&uact=8", [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]);
+var charlize = new Friend("Charlize Theron", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.biography.com%2F.image%2Far_1%3A1%252Cc_fill%252Ccs_srgb%252Cg_face%252Cq_auto%3Agood%252Cw_300%2FMTE5NDg0MDU1MjI3NTAwMDQ3%2Fcharlize-theron-9542564-2-402.jpg&imgrefurl=https%3A%2F%2Fwww.biography.com%2Fpeople%2Fcharlize-theron-9542564&docid=YezzpiEu_bRP0M&tbnid=hXwaWwls1i9BZM%3A&vet=10ahUKEwilr-vqqbDgAhVCHTQIHQLyB2wQMwhtKAIwAg..i&w=300&h=300&bih=713&biw=990&q=charlize%20theron&ved=0ahUKEwilr-vqqbDgAhVCHTQIHQLyB2wQMwhtKAIwAg&iact=mrc&uact=8", [8, 2, 10, 7, 6, 1, 9, 7, 7, 8]);
 
 var amy = new Friend("Amy Schumer", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.bwwstatic.com%2Fheadshots%2F402388sm.jpg&imgrefurl=https%3A%2F%2Fwww.broadwayworld.com%2Fpeople%2Fheadshot%2FAmy-Schumer%2F&docid=iZlwZR7B2WY_WM&tbnid=alLDZtRyLldSEM%3A&vet=10ahUKEwi4qM22qrDgAhXeGDQIHRreByYQMwhNKAAwAA..i&w=204&h=254&bih=713&biw=990&q=amy%20schumer%20headshot&ved=0ahUKEwi4qM22qrDgAhXeGDQIHRreByYQMwhNKAAwAA&iact=mrc&uact=8", [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]);
 
@@ -89,12 +89,7 @@ module.exports = dataObj;
 
 //Functions
 //=========================================
-function Friend(name, photo, randomRes) {
-    this.name = name;
-    this.photo = photo;
-    this.randomRes = randomRes;
 
-}
 
 /*
 EXTRA---This generates a Random user object that has a Capital First and Last Name and a Defined 
