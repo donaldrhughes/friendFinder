@@ -12,6 +12,9 @@ The closest match will be the user with the least amount of difference.*/
 //Dependencies
 //=================================
 var Friend = require("./Friend");
+var makeid = require("./makeid");
+var makeScores = require("./makeScores");
+
 //=========================================
 // DATA (Main)
 
@@ -67,66 +70,18 @@ console.log(randomObj);
 
 var dataObj = {
     friend0: new Friend(randomName, "#", randomRes),
-    // friend1: 
-    // friend2: new Friend(randomName, "#", randomRes),
+ 
 }
 
 var newFriend = new Friend("New Friend", "#", [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]);
 
-
-//Best Form
-
-
-
-
 // console.log(dataObj.friend);
 
-
-//export the array
+//export the dataObj
 module.exports = dataObj;
 
 
 
-//Functions
-//=========================================
-
-
-/*
-EXTRA---This generates a Random user object that has a Capital First and Last Name and a Defined 
-number of addtl lower case letters ---very cool!!!!1*/
-function makeid() {
-
-    var text = "";
-    var text2 = "";
-    var text3 = "";
-    var text4 = "";
-    var possibleCap = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var possibleLower = "abcdefghijklmnopqrstuvwxyz";
-
-    for (var i = 0; i < 1; i++) {
-        text += possibleCap.charAt(Math.floor(Math.random() * possibleCap.length));
-    };
-    for (var i = 0; i < 4; i++) {
-        text2 += possibleLower.charAt(Math.floor(Math.random() * possibleCap.length));
-    };
-    for (var i = 0; i < 1; i++) {
-        text3 += possibleCap.charAt(Math.floor(Math.random() * possibleCap.length));
-    };
-    for (var i = 0; i < 4; i++) {
-        text4 += possibleLower.charAt(Math.floor(Math.random() * possibleCap.length));
-    };
-    finalText = text + text2 + " " + text3 + text4;
-    return finalText;
-}
-
-//EXTRA function which returns the results of a Generated 10 question Array
-function makeScores() {
-    var result = Array.from({ length: 10 }, () => Math.floor(Math.random() * 10) + 1);;
-
-    return result;
-}
-
-//Build a Giphy Response that pulls a random image
 
 
 
