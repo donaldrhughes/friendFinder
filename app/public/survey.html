@@ -14,69 +14,83 @@
 
 <body>
     <style>
-        body{
-                background-color:skyblue;
-            }
-            .ques{
-                font-size:22px;
-                color: #111;
-               font-weight: bolder;
-               border-bottom: solid 2px #ddd;
-              
-               
-            }
-            .pref{
-                color:snow;
-                font-size: 14px;
-                background-color: slateblue;
-                margin-top:2%;
-            
-                margin-left: 10%;
-                margin-right: 10%;
-                border-right: dotted 2px black;
-                border-bottom: dotted 2px black;
-                
-            }
-            .submitBtn{
+        body {
+            background-color: skyblue;
+        }
+
+        .ques {
+            font-size: 22px;
+            color: #111;
+            font-weight: bolder;
+            border-bottom: solid 2px #ddd;
+
+
+        }
+
+        .pref {
+            color: snow;
+            font-size: 14px;
+            background-color: slateblue;
+            margin-top: 2%;
+
+            margin-left: 10%;
+            margin-right: 10%;
+            border-right: dotted 2px black;
+            border-bottom: dotted 2px black;
+
+        }
+
+        .submitBtn {
             background-color: blue;
-            margin-top:4%;
-            margin-left:8%;
-            }
-            .icon1{
-                color: red;
-            }
-            .icon2{
-                color:green;
-            }
-            .icon3{
-                color:snow;
-            }
-            .icon4{
-                color:black;
-            }
-            .icon5{
-                color:snow;
-            }
-            .icon6{
-                color:yellow;
-            }
-            .icon7{
-                color:brown;
-            }
-            .icon8{
-                color:blue;
-            }
-            .icon9{
-                color:grey;
-            }
-            .icon10{
-                color:snow;
-            }
-            .head{
-                color: #333;
-                text-align: center;
-            }
-            </style>
+            margin-top: 4%;
+            margin-left: 8%;
+        }
+
+        .icon1 {
+            color: red;
+        }
+
+        .icon2 {
+            color: green;
+        }
+
+        .icon3 {
+            color: snow;
+        }
+
+        .icon4 {
+            color: black;
+        }
+
+        .icon5 {
+            color: snow;
+        }
+
+        .icon6 {
+            color: yellow;
+        }
+
+        .icon7 {
+            color: brown;
+        }
+
+        .icon8 {
+            color: blue;
+        }
+
+        .icon9 {
+            color: grey;
+        }
+
+        .icon10 {
+            color: snow;
+        }
+
+        .head {
+            color: #333;
+            text-align: center;
+        }
+    </style>
     Friend Finder Survey
     <div class="container">
         <div class="row">
@@ -254,20 +268,17 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <!--SEND DATA TO SERVER -->
     <script type="text/javascript">
-        // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-        // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-        // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-        // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+     
 
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
 
-            // Here we grab the form elements
+            // Pull form data
             var survey = {
                 ques1: $("#ques1").val(),
                 ques2: $("#ques2").val(),
@@ -278,35 +289,22 @@
                 ques7: $("#ques7").val(),
                 ques8: $("#ques8").val(),
                 ques9: $("#ques9").val(),
-                ques10: $("#ques10").val()
+                ques10: $("#ques10").val(),
+                total: 29
             };
-//get the sum of the value here for the new friend
-var total = Number(survey.ques1) + Number(survey.ques2) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3);
 
-// for(i=1; i<=10; i++){
-//     if(survey.ques + i != null){
-//         total = total + Number(survey.ques + i);
-//     }
-    
-    
-// }
-console.log(total);
-// var surveyArr = [];
-// console.log(surveyArr);
-// for(i=1; i<=10; i++){
-    // if(survey.ques + i != null){
-        // surveyArr.push(Number(survey.ques + i));
-    // }
-    
-//     console.log(surveyArr);
-// }
+            //get the sum of the value here for the new friend
+            survey.total = Number(survey.ques1) + Number(survey.ques2) + Number(survey.ques3) + Number(survey.ques4) + Number(survey.ques5) + Number(survey.ques6) + Number(survey.ques7) + Number(survey.ques8) + Number(survey.ques9) + Number(survey.ques10);
 
-//make friends object available here or make it its own route for 
-// submit that gets the sum and finds the closest friend
-//modal.show() here after calculation
-//can use the sum of array or a predefined total for each preexisting friend
-//find a method that returns the sum of the results array on the new friend
-// try reduce() array method or another which returns sum
+            console.log(survey.total);
+     
+
+            //make friends object available here or make it its own route for 
+            // submit that gets the sum and finds the closest friend
+            //modal.show() here after calculation
+            //can use the sum of array or a predefined total for each preexisting friend
+            //find a method that returns the sum of the results array on the new friend
+            // try reduce() array method or another which returns sum
             console.log(survey);
 
             // This line is the magic. It"s very similar to the standard ajax function we used.

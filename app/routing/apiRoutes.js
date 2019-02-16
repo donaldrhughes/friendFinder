@@ -25,25 +25,20 @@ module.exports = function (app) {
    
     randomName = makeid();
     randomScore = makeScores();
-    fri = new Friend(randomName, "#", req.body);
-    console.log(fri.randomRes);
-// for(var i = 10; i > 0; i++){
-// if(fri.ques[i] === 1000){
-//   fri.ques[i].randomRes = randomScore[i];
-// }
-
-// }
+    fri = new Friend(randomName, "#", req.body, totalScore);
+fri.totalScore = 31;
+  if(fri.totalScore === (dataObj.friend0).totalScore){
+    console.log("exact");
+   } else {
+     console.log("not exact");
+   }
+  
 
     
+    console.log(fri.randomRes);
 
     console.log(fri.name);
-    // friendsArr.push(req.body);
-    // res.json(true);
-    // }
-    // else {
-    //   data.push(req.body);
-    //   res.json(false);
-    // }
+
   });
 
 }
