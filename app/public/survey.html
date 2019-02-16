@@ -280,7 +280,33 @@
                 ques9: $("#ques9").val(),
                 ques10: $("#ques10").val()
             };
+//get the sum of the value here for the new friend
+var total = Number(survey.ques1) + Number(survey.ques2) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3) + Number(survey.ques3);
 
+// for(i=1; i<=10; i++){
+//     if(survey.ques + i != null){
+//         total = total + Number(survey.ques + i);
+//     }
+    
+    
+// }
+console.log(total);
+// var surveyArr = [];
+// console.log(surveyArr);
+// for(i=1; i<=10; i++){
+    // if(survey.ques + i != null){
+        // surveyArr.push(Number(survey.ques + i));
+    // }
+    
+//     console.log(surveyArr);
+// }
+
+//make friends object available here or make it its own route for 
+// submit that gets the sum and finds the closest friend
+//modal.show() here after calculation
+//can use the sum of array or a predefined total for each preexisting friend
+//find a method that returns the sum of the results array on the new friend
+// try reduce() array method or another which returns sum
             console.log(survey);
 
             // This line is the magic. It"s very similar to the standard ajax function we used.
