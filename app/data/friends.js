@@ -85,7 +85,7 @@ dataObj.friend2 = new Friend(randomName, "#", randomRes, totalScore, diff)
 randomObj.generate();
 dataObj.friend3 = new Friend(randomName, "#", randomRes, totalScore, diff)
 
-dataObj.friend9.totalScore = 5;
+
 
 console.log(dataObj)
 

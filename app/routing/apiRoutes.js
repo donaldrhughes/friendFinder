@@ -21,31 +21,76 @@ module.exports = function (app) {
 
   });
 
-  function getSum(total, num) {
-    return total + num;
-  };
+
 
   app.post("/api/friends", function (req, res) {
-    // Total Difference example: 2 + 1 + 2 = 5
-
-    // Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both 5-3 and 3-5 as 2, and so on.
-    // The closest match will be the user with the least amount of difference.*/
-
     randomName = makeid();
 
     //insert the survey results into a contructor call
     var surveyFriend = new Friend(randomName, "#", req.body, Number(req.body.total));
-    console.log(surveyFriend.totalScore)
-    console.log(dataObj.friend9.totalScore);
 
-    //Conditional Statement Frame
-    if (surveyFriend.totalScore === dataObj.friend9.totalScore) {
-      console.log(dataObj.friend9.name + "is an exact match");
-    } else {
-      console.log("not exact");
+
+    //set all the differences for each friends
+    //no clue how to write a for / in loop to do this
+    dataObj.friend0.diff = Math.abs(surveyFriend.totalScore - dataObj.friend0.totalScore);
+    dataObj.friend1.diff = Math.abs(surveyFriend.totalScore - dataObj.friend1.totalScore);
+    dataObj.friend2.diff = Math.abs(surveyFriend.totalScore - dataObj.friend2.totalScore);
+    dataObj.friend3.diff = Math.abs(surveyFriend.totalScore - dataObj.friend3.totalScore);
+    dataObj.friend4.diff = Math.abs(surveyFriend.totalScore - dataObj.friend4.totalScore);
+    dataObj.friend5.diff = Math.abs(surveyFriend.totalScore - dataObj.friend5.totalScore);
+    dataObj.friend6.diff = Math.abs(surveyFriend.totalScore - dataObj.friend6.totalScore);
+    dataObj.friend7.diff = Math.abs(surveyFriend.totalScore - dataObj.friend7.totalScore);
+    dataObj.friend8.diff = Math.abs(surveyFriend.totalScore - dataObj.friend8.totalScore);
+    dataObj.friend9.diff = Math.abs(surveyFriend.totalScore - dataObj.friend9.totalScore);
+
+
+    console.log(dataObj)
+
+    // find the value with the lowest difference
+    var lowestDiff = Math.min(dataObj.friend0.diff, dataObj.friend1.diff, dataObj.friend2.diff, dataObj.friend3.diff, dataObj.friend4.diff, dataObj.friend5.diff, dataObj.friend6.diff, dataObj.friend7.diff, dataObj.friend8.diff, dataObj.friend9.diff)
+    
+    //match the lowest difference value with the friend's name
+    if (lowestDiff === dataObj.friend0.diff) {
+      console.log(dataObj.friend0.name);
     }
+    else if (lowestDiff === dataObj.friend0.diff) {
+      console.log(dataObj.friend0.name);
+    }
+    else if (lowestDiff === dataObj.friend1.diff) {
+      console.log(dataObj.friend1.name);
+    }
+    else if (lowestDiff === dataObj.friend2.diff) {
+      console.log(dataObj.friend2.name);
+    }
+    else if (lowestDiff === dataObj.friend3.diff) {
+      console.log(dataObj.friend3.name);
+    }
+    else if (lowestDiff === dataObj.friend4.diff) {
+      console.log(dataObj.friend4.name);
+    }
+    else if (lowestDiff === dataObj.friend5.diff) {
+      console.log(dataObj.friend5.name);
+    }
+    else if (lowestDiff === dataObj.friend6.diff) {
+      console.log(dataObj.friend6.name);
+    }
+    else if (lowestDiff === dataObj.friend7.diff) {
+      console.log(dataObj.friend7.name);
+    }
+    else if (lowestDiff === dataObj.friend8.diff) {
+      console.log(dataObj.friend8.name);
+    }
+    else if (lowestDiff === dataObj.friend9.diff) {
+      console.log(dataObj.friend9.name);
+    }
+    else {
+      console.log("Error: No Matches");
+    }
+
   });
 
 }
-
-
+//function that gets the sum of the Friends scores
+function getSum(total, num) {
+  return total + num;
+};

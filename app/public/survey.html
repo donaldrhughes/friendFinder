@@ -273,7 +273,7 @@
 
     <!--SEND DATA TO SERVER -->
     <script type="text/javascript">
-     
+        var best;
 
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
@@ -296,20 +296,9 @@
             //get the sum of the value here for the new friend
             survey.total = Number(survey.ques1) + Number(survey.ques2) + Number(survey.ques3) + Number(survey.ques4) + Number(survey.ques5) + Number(survey.ques6) + Number(survey.ques7) + Number(survey.ques8) + Number(survey.ques9) + Number(survey.ques10);
 
-            console.log(survey.total);
-     
-
             //make friends object available here or make it its own route for 
-            // submit that gets the sum and finds the closest friend
-            //modal.show() here after calculation
-            //can use the sum of array or a predefined total for each preexisting friend
-            //find a method that returns the sum of the results array on the new friend
-            // try reduce() array method or another which returns sum
-            console.log(survey);
 
-            // This line is the magic. It"s very similar to the standard ajax function we used.
-            // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-            // The callback is the response of the server. 
+            //modal.show() here after calculation
 
             $.post("/api/friends", survey,
                 function (data) {
@@ -319,15 +308,27 @@
                     }
 
                     console.log(data);
-
                 });
+
             // Clear the form when submitting
             for (var i = 0; i <= 9; i++) {
-                $("#ques" + i).val("");
+                $("#ques" + i).val("")
             }
-           
 
-        });
+            console.log("test")
+            $.ajax({
+               
+                type: "GET",
+                url: "/api/friends",
+                data: best,
+                success: function (result) {
+                    console.log(result);
+                }
+
+
+            });
+
+        })
 
     </script>
 
