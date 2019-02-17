@@ -21,25 +21,31 @@ module.exports = function (app) {
 
   });
 
+  function getSum(total, num) {
+    return total + num;
+  };
+
   app.post("/api/friends", function (req, res) {
-   
+    // Total Difference example: 2 + 1 + 2 = 5
+
+    // Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both 5-3 and 3-5 as 2, and so on.
+    // The closest match will be the user with the least amount of difference.*/
+
     randomName = makeid();
-    randomScore = makeScores();
-    fri = new Friend(randomName, "#", req.body, totalScore);
-fri.totalScore = 31;
-  if(fri.totalScore === (dataObj.friend0).totalScore){
-    console.log("exact");
-   } else {
-     console.log("not exact");
-   }
-  
 
-    
-    console.log(fri.randomRes);
+    //insert the survey results into a contructor call
+    var surveyFriend = new Friend(randomName, "#", req.body, Number(req.body.total));
+    console.log(surveyFriend.totalScore)
+    console.log(dataObj.friend9.totalScore);
 
-    console.log(fri.name);
-
+    //Conditional Statement Frame
+    if (surveyFriend.totalScore === dataObj.friend9.totalScore) {
+      console.log(dataObj.friend9.name + "is an exact match");
+    } else {
+      console.log("not exact");
+    }
   });
 
 }
+
 
