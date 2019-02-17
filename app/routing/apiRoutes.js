@@ -5,10 +5,10 @@ var dataObj = require("../data/friends")
 var Friend = require("../data/Friend");
 var makeid = require("../data/makeid");
 var makeScores = require("../data/makeScores");
+var match;
 
 //Routes
 //=========================================
-
 
 module.exports = function (app) {
 
@@ -20,7 +20,11 @@ module.exports = function (app) {
     console.log(dataObj);
 
   });
+  app.get("/api/match", function (req, res) {
+    res.json(match);
+    console.log(match);
 
+  });
 
 
   app.post("/api/friends", function (req, res) {
@@ -52,42 +56,56 @@ module.exports = function (app) {
     //match the lowest difference value with the friend's name
     if (lowestDiff === dataObj.friend0.diff) {
       console.log(dataObj.friend0.name);
+      match = dataObj.friend0.name;
     }
     else if (lowestDiff === dataObj.friend0.diff) {
       console.log(dataObj.friend0.name);
+      match = dataObj.friend0.name;
     }
     else if (lowestDiff === dataObj.friend1.diff) {
       console.log(dataObj.friend1.name);
+      match = dataObj.friend0.name;
     }
     else if (lowestDiff === dataObj.friend2.diff) {
       console.log(dataObj.friend2.name);
+      match = dataObj.friend0.name;
     }
     else if (lowestDiff === dataObj.friend3.diff) {
       console.log(dataObj.friend3.name);
+      match = dataObj.friend0.name;
     }
     else if (lowestDiff === dataObj.friend4.diff) {
       console.log(dataObj.friend4.name);
+      match = dataObj.friend0.name;
     }
     else if (lowestDiff === dataObj.friend5.diff) {
       console.log(dataObj.friend5.name);
+      match = dataObj.friend0.name;
     }
     else if (lowestDiff === dataObj.friend6.diff) {
       console.log(dataObj.friend6.name);
+      match = dataObj.friend0.name;
     }
     else if (lowestDiff === dataObj.friend7.diff) {
       console.log(dataObj.friend7.name);
+      match = dataObj.friend0.name;
     }
     else if (lowestDiff === dataObj.friend8.diff) {
       console.log(dataObj.friend8.name);
+      match = dataObj.friend0.name;
     }
     else if (lowestDiff === dataObj.friend9.diff) {
       console.log(dataObj.friend9.name);
+      match = dataObj.friend0.name;
     }
     else {
       console.log("Error: No Matches");
     }
-
+    
   });
+
+  
+
 
 }
 //function that gets the sum of the Friends scores
