@@ -117,6 +117,7 @@
         <div class="modal-body mod">
           <p>Your closest Friend Match is: </p>
           <div id="match" class="match mod"></div>
+          <img id="matchImg" width="200" class ="matchImg">
         </div>
         <div class="modal-footer mod">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -365,15 +366,12 @@
                 data: best,
                 success: function (result) {
                     console.log(result);
-                    $("#match").html(result);
+                    $("#match").html(result.name);
+                    $("#matchImg").attr("src", result.photo);
                     $('#myModal').modal();
                 }
 
             });
-
-           
-            
-    // $('#modal1').modal('open');
  
         })
 

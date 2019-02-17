@@ -8,7 +8,7 @@ var makeScores = require("./makeScores");
 // DATA (Main)
 var totalScore;
 var diff;
-
+var defaultImg = "https://i1.wp.com/www.mvhsoracle.com/wp-content/uploads/2018/08/default-avatar.jpg?w=300&ssl=1";
 // Example Friends with names etc
 var james = new Friend("James Donovan Halliday", "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjyvZvw_q3gAhVR71QKHb1SDlsQjRx6BAgBEAU&url=https%3A%2F%2Freadyplayerone.fandom.com%2Fwiki%2FJames_Donovan_Halliday&psig=AOvVaw3xb8Sy3jNeyZK6qFZUceks&ust=1549778946193368", [5, 1, 4, 4, 5, 1, 2, 5, 4, 1], totalScore, diff);
 james.totalScore = james.randomRes.reduce(getSum);
@@ -44,7 +44,7 @@ var randomObj = {
             randomName = makeid();
             randomRes = makeScores();
             totalScore = Number(randomRes.reduce(getSum));
-            randomFriend = new Friend(randomName, "#", randomRes, totalScore, diff);
+            randomFriend = new Friend(randomName, defaultImg, randomRes, totalScore, diff);
             randomFriend[i] = randomFriend;
             friendsArr.push(randomFriend[i]);
         }
@@ -56,7 +56,7 @@ var randomObj = {
         randomName = makeid();
         randomRes = makeScores();
         totalScore = Number(randomRes.reduce(getSum));
-        randomFriend = new Friend(randomName, "#", randomRes, totalScore, diff);
+        randomFriend = new Friend(randomName, defaultImg, randomRes, totalScore, diff);
 
     }
 }
@@ -65,7 +65,7 @@ randomObj.generateFriends();
 
 //create an object with many friends
 var dataObj = {
-    friend0: new Friend(randomName, "#", randomRes, totalScore, diff),
+    friend0: new Friend(randomName, defaultImg, randomRes, totalScore, diff),
     friend1: {},
     friend2: {},
     friend3: {},
@@ -79,11 +79,11 @@ var dataObj = {
 };
 
 randomObj.generate();
-dataObj.friend1 = new Friend(randomName, "#", randomRes, totalScore, diff)
+dataObj.friend1 = new Friend(randomName, defaultImg, randomRes, totalScore, diff)
 randomObj.generate();
-dataObj.friend2 = new Friend(randomName, "#", randomRes, totalScore, diff)
+dataObj.friend2 = new Friend(randomName, defaultImg, randomRes, totalScore, diff)
 randomObj.generate();
-dataObj.friend3 = new Friend(randomName, "#", randomRes, totalScore, diff)
+dataObj.friend3 = new Friend(randomName, defaultImg, randomRes, totalScore, diff)
 
 
 
