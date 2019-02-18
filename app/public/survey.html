@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="style.css" class="style"> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Friend Finder Survey</title>
+    <title>Friends</title>
 </head>
 
 <body>
@@ -126,11 +126,9 @@
       </div>
     </div>
   </div>
-
-
  
 
-    Friend Finder Survey
+    
     <div class="container">
         <div class="row">
             <div class="head flow-text" id="head">
@@ -244,59 +242,8 @@
                 <button id="submitBtn" class="btn waves-effect waves-light submitBtn" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                 </button>
-                <!-- <input id="#ques0" type="text" class="validate">
-                        <label for="#ques0">Question: 1</label> -->
-
-                <!--                 
-                    <div class="input-field">
-                        <i class="material-icons prefix">ac_unit</i>
-                        <input id="#ques1" type="text" class="validate">
-                        <label for="#ques1">Question: 2</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">straighten</i>
-                        <input id="#ques2" type="text" class="validate">
-                        <label for="#ques2">Question: 3</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="large material-icons prefix">access_alarm</i>
-                        <input id="#ques3" type="text" class="validate">
-                        <label for="#ques3">Question: 4</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="large material-icons prefix">casino</i>
-                        <input id="#ques4" type="text" class="validate">
-                        <label for="#ques4">Question: 5</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">create</i>
-                        <input id="#ques5" type="text" class="validate">
-                        <label for="#ques5">Question: 6</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">flight</i>
-                        <input id="#ques6" type="text" class="validate">
-                        <label for="#ques6">Question: 7</label>
-                    </div>
-
-                    <div class="input-field">
-                        <i class="large material-icons prefix">looks</i>
-                        <input id="#ques7" type="text" class="validate">
-                        <label for="#ques7">Question: 8</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">palette</i>
-                        <input id="#ques8" type="text" class="validate">
-                        <label for="#ques8">Question: 9</label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">smoke_free</i>
-                        <input id="#ques9" type="text" class="validate">
-                        <label for="#ques9">Question: 10</label>
-                    </div>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                        <i class="material-icons right">send</i>
-                    </button> -->
+        
+           
         </div>
         </form>
     </div>
@@ -314,7 +261,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!--SEND DATA TO SERVER -->
+   
     <script type="text/javascript">
   
         var best;
@@ -323,7 +270,7 @@
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
 
-            // Pull form data
+            // Pull form data to a survey object
             var survey = {
                 ques1: $("#ques1").val(),
                 ques2: $("#ques2").val(),
@@ -338,12 +285,8 @@
                 total: 29
             };
 
-            //get the sum of the value here for the new friend
+            //Total the new friends survey score
             survey.total = Number(survey.ques1) + Number(survey.ques2) + Number(survey.ques3) + Number(survey.ques4) + Number(survey.ques5) + Number(survey.ques6) + Number(survey.ques7) + Number(survey.ques8) + Number(survey.ques9) + Number(survey.ques10);
-
-            //make friends object available here or make it its own route for 
-
-            //modal.show() here after calculation
 
             $.post("/api/friends", survey,
                 function (data) {
@@ -359,7 +302,7 @@
             for (var i = 0; i <= 9; i++) {
                 $("#ques" + i).val("")
             }
-
+            //connect to the server on the match route to get the best match
             $.ajax({
                 type: "GET",
                 url: "/api/match",

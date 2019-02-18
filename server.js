@@ -1,4 +1,4 @@
-//Friend Finder Server Start (Main)
+//Friends (Main)
 //=========================================
 
 //Dependencies

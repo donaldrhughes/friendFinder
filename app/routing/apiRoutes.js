@@ -6,6 +6,7 @@ var Friend = require("../data/Friend");
 var makeid = require("../data/makeid");
 var makeScores = require("../data/makeScores");
 
+//prep the match obj
 var matchObj = {
   name: "",
   photo: ""
@@ -41,7 +42,7 @@ module.exports = function (app) {
 
 
     //set all the differences for each friends
-    //no clue how to write a for / in loop to do this
+    //can write a for / in loop to do this?
     dataObj.friend0.diff = Math.abs(surveyFriend.totalScore - dataObj.friend0.totalScore);
     dataObj.friend1.diff = Math.abs(surveyFriend.totalScore - dataObj.friend1.totalScore);
     dataObj.friend2.diff = Math.abs(surveyFriend.totalScore - dataObj.friend2.totalScore);
