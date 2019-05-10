@@ -10,22 +10,22 @@ var totalScore;
 var diff;
 var defaultImg = "https://i1.wp.com/www.mvhsoracle.com/wp-content/uploads/2018/08/default-avatar.jpg?w=300&ssl=1";
 // Example Friends with names etc
-var james = new Friend("James Donovan Halliday", "https://cdn.vox-cdn.com/thumbor/YN55VGeMVgObSYp4D3nxCYTotHs=/0x0:2894x1200/620x413/filters:focal(1216x369:1678x831):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/59247431/RPO_TRLR_0060.0.jpg", [5, 1, 4, 4, 5, 1, 2, 5, 4, 1], totalScore, diff);
+var james = new Friend("James Donovan Halliday", "https://cdn.vox-cdn.com/thumbor/YN55VGeMVgObSYp4D3nxCYTotHs=/0x0:2894x1200/620x413/filters:focal(1216x369:1678x831):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/59247431/RPO_TRLR_0060.0.jpg", [5, 5, 5, 5, 5, 5, 5, 5, 5, 5], totalScore, diff);
 james.totalScore = james.randomRes.reduce(getSum);
 
-var indigo = new Friend("Indigo Montoya", "https://i.pinimg.com/236x/9b/76/8e/9b768e465ece0acb4f1c9f001caf36b3.jpg", [4, 10, 4, 6, 7, 7, 2, 5, 8, 8], totalScore, diff);
+var indigo = new Friend("Indigo Montoya", "https://i.pinimg.com/236x/9b/76/8e/9b768e465ece0acb4f1c9f001caf36b3.jpg", [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], totalScore, diff);
 indigo.totalScore = indigo.randomRes.reduce(getSum);
 
-var hugh = new Friend("Hugh Grant", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Hugh_Grant_Cannes.jpg/170px-Hugh_Grant_Cannes.jpg", [3, 10, 6, 5, 3, 4, 1, 10, 6, 9], totalScore, diff);
+var hugh = new Friend("Hugh Grant", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Hugh_Grant_Cannes.jpg/170px-Hugh_Grant_Cannes.jpg", [5, 5, 5, 5, 5, 1, 1, 1, 1, 1], totalScore, diff);
 hugh.totalScore = hugh.randomRes.reduce(getSum);
 
 var charlize = new Friend("Charlize Theron", "https://s3-us-west-1.amazonaws.com/s3.kllcfm.radio.com/s3fs-public/styles/delta__775x515/public/charlize775.jpg?itok=HMRKD_Ul&c=183cd5bdc19cc7c05aae92a05fb6ec07", [8, 2, 10, 7, 6, 1, 9, 7, 7, 8], totalScore, diff);
 charlize.totalScore = charlize.randomRes.reduce(getSum);
 
-var amy = new Friend("Amy Schumer", "https://m.media-amazon.com/images/M/MV5BOTQ3MDc1MTI2Nl5BMl5BanBnXkFtZTcwMzYxMDgzOQ@@._V1_SY1000_CR0,0,911,1000_AL_.jpg", [5, 1, 4, 4, 5, 1, 2, 5, 4, 1], totalScore, diff);
+var amy = new Friend("Amy Schumer", "https://m.media-amazon.com/images/M/MV5BOTQ3MDc1MTI2Nl5BMl5BanBnXkFtZTcwMzYxMDgzOQ@@._V1_SY1000_CR0,0,911,1000_AL_.jpg", [2, 2, 2, 2, 2, 1, 1, 1, 1, 1], totalScore, diff);
 amy.totalScore = amy.randomRes.reduce(getSum);
 
-var kate = new Friend("Kate Winslet", "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE1ODA0OTcxODI4MjgyODkz/kate-winslet-9534599-1-402.jpg", [6, 6, 3, 10, 10, 2, 3, 3, 6, 2], totalScore, diff);
+var kate = new Friend("Kate Winslet", "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE1ODA0OTcxODI4MjgyODkz/kate-winslet-9534599-1-402.jpg", [4, 4, 4, 4, 4, 4, 4, 4, 4, 4], totalScore, diff);
 kate.totalScore = kate.randomRes.reduce(getSum);
 
 //EXTRA --  Friend Generator
