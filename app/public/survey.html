@@ -132,10 +132,9 @@
     <div class="container">
         <div class="row">
             <div class="head flow-text" id="head">
-                Select your preference:
+                For Each Question, select the preference that you identify with.
             </div>
-        </div>
-        <div class="row">
+
             <form class="col s12">
 
                 <i class="medium material-icons prefix icon1">favorite_border</i>
@@ -245,7 +244,7 @@
                 </button>
         
            
-        </div></div>
+        </div>
         </form>
     </div>
     </div>
@@ -266,32 +265,43 @@
     <script type="text/javascript">
   
         var best;
-        
+        var survey = {
+                ques1: 0,
+                ques2: 0,
+                ques3: 0,
+                ques4: 0,
+                ques5: 0,
+                ques6: 0,
+                ques7: 0,
+                ques8: 0,
+                ques9: 0,
+                ques10: 0,
+            };
 
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
 
             // Pull form data to a survey object
             var survey = {
-                ques1: $("#ques1").val(),
-                ques2: $("#ques2").val(),
-                ques3: $("#ques3").val(),
-                ques4: $("#ques4").val(),
-                ques5: $("#ques5").val(),
-                ques6: $("#ques6").val(),
-                ques7: $("#ques7").val(),
-                ques8: $("#ques8").val(),
-                ques9: $("#ques9").val(),
-                ques10: $("#ques10").val(),
-                total: 29
+                ques1: Number($("#ques1").val()),
+                ques2: Number($("#ques2").val()),
+                ques3: Number($("#ques3").val()),
+                ques4: Number($("#ques4").val()),
+                ques5: Number($("#ques5").val()),
+                ques6: Number($("#ques6").val()),
+                ques7: Number($("#ques7").val()),
+                ques8: Number($("#ques8").val()),
+                ques9: Number($("#ques9").val()),
+                ques10: Number($("#ques10").val()),
+                total: 0
             };
-
+            console.log(survey)
             //Total the new friends survey score
             survey.total = Number(survey.ques1) + Number(survey.ques2) + Number(survey.ques3) + Number(survey.ques4) + Number(survey.ques5) + Number(survey.ques6) + Number(survey.ques7) + Number(survey.ques8) + Number(survey.ques9) + Number(survey.ques10);
-
+            console.log(typeof(survey.total))
             $.post("/api/friends", survey,
                 function (data) {
-
+ console.log(data.total)
                     if (!data) {
                         throw err;
                     }
